@@ -32,9 +32,9 @@ const Chat = ({user}) => {
       await socket.emit('send_message', messageData)
       setMessageList((list)=> [...list, messageData])
        await dispatch(sendMessage(messageData))
-      
-      setCurrentMessage('')
+     
     }
+    setCurrentMessage('')
   }
   useEffect(()=>{
     socket.on('receive_message', (data)=>{
