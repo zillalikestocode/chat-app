@@ -12,7 +12,7 @@ import {getRooms} from '../actions/rooms'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 
-const socket = io.connect('http://localhost:5000')
+const socket = io.connect('https://https://z-chat-project.herokuapp.com/')
 
 const Home = ({user, setUser}) => {
   const dispatch = useDispatch()

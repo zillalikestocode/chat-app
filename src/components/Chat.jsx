@@ -6,7 +6,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {sendMessage, getMessages} from '../actions/messages'
 
-const socket = io.connect('http://localhost:5000')
+const socket = io.connect('https://https://z-chat-project.herokuapp.com/')
 
 const Chat = ({user}) => {
   const messages = useSelector(state => state.messages)
