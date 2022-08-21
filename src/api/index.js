@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({baseURL: 'https://https://z-chat-project.herokuapp.com/'})
+const API = axios.create({baseURL: 'https://z-chat-project.herokuapp.com'})
 
 export const signUp =(user)=> API.post('/user/signup', user)
 export const signIn = (user)=> API.post('/user/signin', user)

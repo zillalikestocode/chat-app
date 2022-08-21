@@ -3,7 +3,7 @@ import Button from './Button'
 import io from 'socket.io-client'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
-const socket = io.connect('https://https://z-chat-project.herokuapp.com/')
+const socket = io.connect('https://z-chat-project.herokuapp.com')
 import {createRoom, getRooms } from '../actions/rooms'
 
 const CreateRoom = ({user}) => {

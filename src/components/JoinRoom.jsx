@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {joinRoom, getRooms} from '../actions/rooms'
 
-const socket = io.connect('http://localhost:5000')
+const socket = io.connect('https://z-chat-project.herokuapp.com')
 const JoinRoom = ({user}) => {
   const navigate = useNavigate()
   const [room, setRoom] = useState('')
