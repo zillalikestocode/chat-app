@@ -62,8 +62,8 @@ const Chat = ({ user }) => {
           <h4 className="">{currentRoom.name}</h4>
         </div>
       </div>
-      <div className=" flex flex-col px-3 gap-3 md:h-[250px]">
-        <ScrollToBottom className="h-[calc(100vh-114px)]">
+      <ScrollToBottom className="h-[calc(100vh-114px)]">
+      <div className=" flex flex-col px-3 gap-3 md:h-[250px]"> 
           {messageList.map((msg, i) => (
           <div key={i} className={`flex flex-col ${user?.result?.username === msg.username ? 'ml-auto' : 'mr-auto'}`}>
             <h4 className={`${user?.result?.username === msg.username ? 'ml-auto' : 'mr-auto'} text-xs font-medium`}>{msg.author.split(' ')[0]}</h4>
@@ -74,9 +74,8 @@ const Chat = ({ user }) => {
           </div>
 
         ))}
+        </div>
         </ScrollToBottom>
-        
-      </div>
       <form onSubmit={send} className=' flex gap-2 items-start p-3 justify-between'>
         <input row="1" value={currentMessage} onChange={(e) => setCurrentMessage(e.target.value)} name="" className='focus:outline-none w-full bg-slate-300 text-slate-900 rounded-md shadow p-2' placeholder="Write a Message" />
         <div className="w-fit">
