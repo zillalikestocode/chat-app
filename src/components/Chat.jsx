@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from 'react'
 import io from 'socket.io-client'
 import Button from './Button'
@@ -34,8 +34,8 @@ const Chat = ({ user }) => {
       setMessageList((list) => [...list, messageData])
       await dispatch(sendMessage(messageData))
 
-      setCurrentMessage('')
     }
+    setCurrentMessage('')
   }
   useEffect(() => {
     socket.on('receive_message', (data) => {
