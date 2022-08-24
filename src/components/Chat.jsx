@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import io from 'socket.io-client'
 import Button from './Button'
+import ScrollToBottom from 'react-scroll-to-bottom'
 import { TbSend } from 'react-icons/tb'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -62,8 +63,9 @@ const Chat = ({ user }) => {
           <h4 className="">{currentRoom.name}</h4>
         </div>
       </div>
-      <div className=" flex flex-col px-3 gap-3 md:h-[250px] h-[calc(100vh-114px)] overflow-y-scroll">
-        {messageList.map((msg, i) => (
+      <div className=" flex flex-col px-3 gap-3 md:h-[250px]">
+        <ScrollToBottom className="h-[calc(100vh-114px)]">
+          {messageList.map((msg, i) => (
           <div key={i} className={`flex flex-col ${user?.result?.username === msg.username ? 'ml-auto' : 'mr-auto'}`}>
             <h4 className={`${user?.result?.username === msg.username ? 'ml-auto' : 'mr-auto'} text-xs font-medium`}>{msg.author.split(' ')[0]}</h4>
             <div className={`rounded-2xl max-w-[250px] text-white w-fit shadow-md gap-1 px-3 p-2 ${user?.result?.username === msg.username ? 'bg-green-300 rounded-tr-sm ' : 'bg-blue-300 rounded-tl-sm'}`}>
@@ -73,6 +75,8 @@ const Chat = ({ user }) => {
           </div>
 
         ))}
+        </ScrollToBottom>
+        
       </div>
       <form onSubmit={send} className=' flex gap-2 items-start p-3 justify-between'>
         <input row="1" value={currentMessage} onChange={(e) => setCurrentMessage(e.target.value)} name="" className='focus:outline-none w-full bg-slate-300 text-slate-900 rounded-md shadow p-2' placeholder="Write a Message" />
